@@ -1,33 +1,52 @@
 import css from "./Profile.module.css";
 
-export const Profile = () => {
+const Avatar = ({ src, alt }) => {
+  return <img className={css.image} src={src} alt={alt} />;
+};
+
+const Author = ({ avatar, username, tag, location }) => {
+  return (
+    <div className={css.main}>
+      <Avatar src={avatar} alt={username} />
+      <p className={css.name}>{username}</p>
+      <p className={css.info}>{tag}</p>
+      <p className={css.info}>{location}</p>
+    </div>
+  );
+};
+const Stats = ({ stats }) => {
+  return (
+    <ul className={css.stats}>
+      <li className={css.stat}>
+        <span className={css["stat-name"]}>Followers</span>
+        <span className={css["stat-desc"]}>{stats.followers}</span>
+      </li>
+      <li className={css.stat}>
+        <span className={css["stat-name"]}>Views</span>
+        <span className={css["stat-desc"]}>{stats.views}</span>
+      </li>
+      <li className={css.stat}>
+        <span className={css["stat-name"]}>Likes</span>
+        <span className={css["stat-desc"]}>{stats.likes}</span>
+      </li>
+    </ul>
+  );
+};
+
+export const Profile = (props) => {
+  const {
+    profile: { avatar, username, tag, location, stats },
+  } = props;
+
   return (
     <article className={css.profile}>
-      <div className={css.main}>
-        <img
-          className={css.image}
-          src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-          alt="User avatar"
-        />
-        <p className={css.name}>Petra Marica</p>
-        <p className={css.info}>@pmarica</p>
-        <p className={css.info}>Salvador, Brasil</p>
-      </div>
-
-      <ul className={css.stats}>
-        <li className={css.stat}>
-          <span className={css.statName}>Followers</span>
-          <span className={css.statDesc}>1000</span>
-        </li>
-        <li className={css.stat}>
-          <span className={css.statName}>Views</span>
-          <span className={css.statDesc}>2000</span>
-        </li>
-        <li className={css.stat}>
-          <span className={css.statName}>Likes</span>
-          <span className={css.statDesc}>3000</span>
-        </li>
-      </ul>
+      <Author
+        avatar={avatar}
+        username={username}
+        tag={tag}
+        location={location}
+      />
+      <Stats stats={stats} />
     </article>
   );
 };

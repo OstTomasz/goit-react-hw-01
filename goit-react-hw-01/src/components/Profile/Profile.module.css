@@ -71,11 +71,11 @@
   gap: 5px;
 }
 
-.statName {
+.stat-name {
   font-size: 1.3em;
 }
 
-.statDesc {
+.stat-desc {
   font-weight: bold;
   font-size: 1.3em;
 }
