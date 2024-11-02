@@ -1,6 +1,9 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
-  background-color: rgb(78, 78, 78);
+  background-color: rgb(161, 161, 161);
 }
 
 main {
@@ -9,4 +12,5 @@ main {
   justify-content: center;
   align-items: center;
   gap: 50px;
+  width: 1000px;
 }

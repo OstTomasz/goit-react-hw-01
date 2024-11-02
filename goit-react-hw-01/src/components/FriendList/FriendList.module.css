@@ -31,9 +31,9 @@
 }
 
 .online {
-  color: green;
+  color: limegreen;
 }
 
 .offline {
-  color: red;
+  color: crimson;
 }

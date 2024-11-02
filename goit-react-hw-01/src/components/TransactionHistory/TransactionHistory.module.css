@@ -1,0 +1,26 @@
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+th,
+td {
+  height: 30px;
+  text-align: center;
+  border: 2px solid black;
+  padding: 2px;
+}
+
+th {
+  background-color: rgb(61, 61, 61);
+  color: white;
+}
+
+tr {
+  font-size: larger;
+}
+tr:nth-child(even) {
+  background-color: lightslategray;
+}
